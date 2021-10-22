@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>500</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>80</width>
-     <height>21</height>
+     <width>140</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -29,10 +29,10 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>360</x>
      <y>0</y>
-     <width>80</width>
-     <height>21</height>
+     <width>140</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -43,9 +43,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>280</y>
-     <width>80</width>
-     <height>21</height>
+     <y>420</y>
+     <width>140</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -55,10 +55,10 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>280</y>
-     <width>80</width>
-     <height>21</height>
+     <x>360</x>
+     <y>420</y>
+     <width>140</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="text">
@@ -68,14 +68,33 @@
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>280</y>
+     <x>210</x>
+     <y>470</y>
      <width>80</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
     <string>Maintinence</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>90</y>
+     <width>141</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>National Football League</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

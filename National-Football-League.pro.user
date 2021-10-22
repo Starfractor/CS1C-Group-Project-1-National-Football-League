@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 5.0.2, 2021-10-20T20:42:13. -->
+<!-- Written by QtCreator 5.0.2, 2021-10-20T21:59:01. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -237,8 +237,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/starf/OneDrive/CS Homework and Labs/CS 1C/National-Football-League/National-Football-League.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/starf/OneDrive/CS Homework and Labs/CS 1C/National-Football-League/National-Football-League.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">National-Football-League2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/starf/OneDrive/CS Homework and Labs/CS 1C/CS1C-Project-1/National-Football-League.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/starf/OneDrive/CS Homework and Labs/CS 1C/CS1C-Project-1/National-Football-League.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

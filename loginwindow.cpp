@@ -6,6 +6,8 @@ LoginWindow::LoginWindow(QWidget *parent) :
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
+    this->setFixedSize(400,300);
+    this->setWindowTitle("Login Required");
 }
 
 LoginWindow::~LoginWindow()

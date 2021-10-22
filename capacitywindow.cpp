@@ -6,6 +6,8 @@ CapacityWindow::CapacityWindow(QWidget *parent) :
     ui(new Ui::CapacityWindow)
 {
     ui->setupUi(this);
+    this->setFixedSize(400,300);
+    this->setWindowTitle("Stadium Capacity");
 }
 
 CapacityWindow::~CapacityWindow()

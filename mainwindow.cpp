@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     capacityWindow = new CapacityWindow();
     loginWindow = new LoginWindow();
     listWindow = new ListWindow();
+    this->setFixedSize(500,500);
+    this->setWindowTitle("National Football League");
 }
 
 MainWindow::~MainWindow()

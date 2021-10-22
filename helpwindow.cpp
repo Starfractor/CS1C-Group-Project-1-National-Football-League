@@ -6,6 +6,8 @@ HelpWindow::HelpWindow(QWidget *parent) :
     ui(new Ui::HelpWindow)
 {
     ui->setupUi(this);
+    this->setFixedSize(400,300);
+    this->setWindowTitle("Help");
 }
 
 HelpWindow::~HelpWindow()
