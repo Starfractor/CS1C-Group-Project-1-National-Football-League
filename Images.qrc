@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/HomeScreenImages">
+        <file>Images/istockphoto-1176737230-612x612.jpg</file>
+    </qresource>
+</RCC>

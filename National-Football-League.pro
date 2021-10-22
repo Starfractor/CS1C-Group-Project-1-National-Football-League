@@ -11,6 +11,7 @@ SOURCES +=  main.cpp \
     helpwindow.cpp \
     listwindow.cpp \
     loginwindow.cpp \
+    maintenancewindow.cpp \
     mainwindow.cpp
 
 FORMS += \
@@ -19,6 +20,7 @@ FORMS += \
     helpwindow.ui \
     listwindow.ui \
     loginwindow.ui \
+    maintenancewindow.ui \
     mainwindow.ui
 
 HEADERS += \
@@ -27,4 +29,7 @@ HEADERS += \
     helpwindow.h \
     listwindow.h \
     loginwindow.h \
+    maintenancewindow.h \
     mainwindow.h
+
+RESOURCES +=
