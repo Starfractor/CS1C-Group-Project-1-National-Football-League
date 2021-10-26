@@ -8,11 +8,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 SOURCES +=  main.cpp \
     capacitywindow.cpp \
     contactuswindow.cpp \
+    footballteam.cpp \
     helpwindow.cpp \
     listwindow.cpp \
     loginwindow.cpp \
     maintenancewindow.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    teamlist.cpp
 
 FORMS += \
     capacitywindow.ui \
@@ -26,10 +28,12 @@ FORMS += \
 HEADERS += \
     capacitywindow.h \
     contactuswindow.h \
+    footballteam.h \
     helpwindow.h \
     listwindow.h \
     loginwindow.h \
     maintenancewindow.h \
-    mainwindow.h
+    mainwindow.h \
+    teamlist.h
 
 RESOURCES +=

@@ -33,5 +33,7 @@ void MaintenanceWindow::on_pushButton_uploadFile_clicked()
 
     ui->textBrowser->setText((in.readAll()));
 
+    uploadFile.close();
+
 }
 

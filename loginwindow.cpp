@@ -22,7 +22,7 @@ void LoginWindow::on_pushButton_login_clicked()
 {
     QString password = ui->lineEdit_password->text();
 
-    if(password == "test")
+    if(password == "password")
     {
         QMessageBox::information(this, "Success", "Login Successful");
         hide();
