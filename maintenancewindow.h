@@ -15,6 +15,9 @@ public:
     explicit MaintenanceWindow(QWidget *parent = nullptr);
     ~MaintenanceWindow();
 
+private slots:
+    void on_pushButton_uploadFile_clicked();
+
 private:
     Ui::MaintenanceWindow *ui;
 };

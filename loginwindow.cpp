@@ -1,6 +1,7 @@
 #include "loginwindow.h"
 #include "ui_loginwindow.h"
 #include <QMessageBox>
+#include <QKeyEvent>
 
 LoginWindow::LoginWindow(QWidget *parent) :
     QWidget(parent),
@@ -30,7 +31,7 @@ void LoginWindow::on_pushButton_login_clicked()
     }
     else
     {
-        QMessageBox::warning(this,"Error", "The password is incorrect");
+        QMessageBox::warning(this, "Error", "The password is incorrect");
         ui->lineEdit_password->clear();
     }
 }
