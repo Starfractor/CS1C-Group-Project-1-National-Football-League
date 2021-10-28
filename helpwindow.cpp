@@ -14,3 +14,8 @@ HelpWindow::~HelpWindow()
 {
     delete ui;
 }
+
+void HelpWindow::on_pushButton_clicked()
+{
+
+}

@@ -17,6 +17,11 @@ LoginWindow::~LoginWindow()
     delete ui;
 }
 
+void LoginWindow::on_pushButton_login_pressed()
+{
+
+}
+
 //Checks if passowrd is valid when login button is pressed
 void LoginWindow::on_pushButton_login_clicked()
 {
