@@ -1,9 +1,13 @@
 #ifndef TEAMLIST_H
 #define TEAMLIST_H
 #include "footballteam.h"
-#include <string>
-#include <list>
+#include <QString>
+#include <QList>
 #include <QFile>
+#include <QTextStream>
+#include <QStringList>
+#include <QDebug>
+
 
 
 class TeamList
@@ -15,9 +19,10 @@ public:
     void update(QFile file);
     void printList();
     void sortList(category category);
+    bool alreadyExists(FootballTeam team);
 
 private:
-    std::list<FootballTeam> teamList;
+    QList<FootballTeam> teamList;
 };
 
 #endif // TEAMLIST_H
