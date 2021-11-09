@@ -2,98 +2,26 @@
 <ui version="4.0">
  <class>CapacityWindow</class>
  <widget class="QWidget" name="CapacityWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>115</width>
+    <height>57</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <widget class="QTableWidget" name="tableWidget">
-     <property name="rowCount">
-      <number>35</number>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>TextLabel</string>
      </property>
-     <property name="columnCount">
-      <number>9</number>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <row/>
-     <column>
-      <property name="text">
-       <string>Team Name</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Stadium Name</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Seating Capacity</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Location</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Conference</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Division</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Surface Type</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Stadium Roof Type</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Date Opened</string>
-      </property>
-     </column>
     </widget>
    </item>
   </layout>
