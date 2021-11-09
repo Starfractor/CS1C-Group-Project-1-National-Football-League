@@ -1,21 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>ListWindow</class>
  <widget class="QWidget" name="ListWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>988</width>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>9</number>
+     </property>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Team Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Stadium Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Seating Capacity</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Location</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Conference</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Division</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Surface Type</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Stadium Roof Type</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Date Opened</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

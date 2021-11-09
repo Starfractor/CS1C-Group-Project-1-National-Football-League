@@ -1,10 +1,7 @@
+
 #include "teamlist.h"
 
-TeamList::TeamList()
-{
-
-}
-
+TeamList::TeamList(){}
 TeamList::TeamList(QFile file)
 {
     if(!file.open(QIODevice::ReadOnly))
@@ -23,7 +20,7 @@ TeamList::TeamList(QFile file)
         {
             QString teamName = data[0];
             QString stadiumName = data[1];
-            int seatingCapacity = data[2].toInt();
+            QString seatingCapacity = data[2];
             QString location = data[3];
             QString conference = data[4];
             QString division = data[5];
@@ -55,7 +52,7 @@ void TeamList::update(QFile file)
         {
             QString teamName = data[0];
             QString stadiumName = data[1];
-            int seatingCapacity = data[2].toInt();
+            QString seatingCapacity = data[2];
             QString location = data[3];
             QString conference = data[4];
             QString division = data[5];
@@ -93,4 +90,9 @@ bool TeamList::alreadyExists(FootballTeam team)
         }
     }
     return false;
+}
+
+QList<FootballTeam> TeamList::getTeamList() const
+{
+    return teamList;
 }

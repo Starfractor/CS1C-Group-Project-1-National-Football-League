@@ -36,4 +36,5 @@ HEADERS += \
     mainwindow.h \
     teamlist.h
 
-RESOURCES +=
+RESOURCES += \
+    Resources.qrc

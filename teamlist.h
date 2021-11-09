@@ -20,7 +20,7 @@ public:
     void printList();
     void sortList(category category);
     bool alreadyExists(FootballTeam team);
-
+    QList<FootballTeam> getTeamList() const;
 private:
     QList<FootballTeam> teamList;
 };

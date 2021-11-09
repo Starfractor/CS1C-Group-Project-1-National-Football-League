@@ -4,7 +4,7 @@ FootballTeam::FootballTeam()
 {
     teamName = "Unknown";
     stadiumName = "Unknown";
-    seatingCapacity = 0;
+    seatingCapacity = "Unknown";
     location = "Unknown";
     conference = "Unknown";
     division = "Unknown";
@@ -13,7 +13,7 @@ FootballTeam::FootballTeam()
     dateOpened = 0;
 }
 
-FootballTeam::FootballTeam(QString teamName, QString stadiumName, int seatingCapacity, QString location, QString conference,
+FootballTeam::FootballTeam(QString teamName, QString stadiumName, QString seatingCapacity, QString location, QString conference,
              QString division, QString surfaceType, QString stadiumRoofType, int dateOpened)
 {
     this->teamName = teamName;
@@ -27,42 +27,39 @@ FootballTeam::FootballTeam(QString teamName, QString stadiumName, int seatingCap
     this->dateOpened = dateOpened;
 }
 
-QString FootballTeam::getTeamName()const
+QString FootballTeam::getTeamName() const
 {
     return teamName;
 }
-
-QString FootballTeam::getStadiumName()const
+QString FootballTeam::getStadiumName() const
 {
     return stadiumName;
 }
-
-int FootballTeam::getSeatingCapacity()const
+QString FootballTeam::getSeatingCapacity() const
 {
     return seatingCapacity;
 }
-
-QString FootballTeam::getLocation()const
+QString FootballTeam::getLocation() const
 {
     return location;
 }
-
-QString FootballTeam::getDivision()const
+QString FootballTeam::getConference() const
+{
+    return conference;
+}
+QString FootballTeam::getDivision() const
 {
     return division;
 }
-
-QString FootballTeam::getSurfaceType()const
+QString FootballTeam::getSurfaceType() const
 {
     return surfaceType;
 }
-
-QString FootballTeam::getStadiumRoofType()const
+QString FootballTeam::getStadiumRoofType() const
 {
     return stadiumRoofType;
 }
-
-int FootballTeam::getDateOpened()const
+int FootballTeam::getDateOpened() const
 {
     return dateOpened;
 }

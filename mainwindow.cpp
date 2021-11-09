@@ -7,9 +7,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this); 
 
-
     this->setFixedSize(500,500);
     this->setWindowTitle("National Football League");
+
+    teamList = new TeamList(QFile(":/data/Football Teams/Original Teams.csv"));
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +32,13 @@ void MainWindow::on_pushButton_2_clicked()
     contactUsWindow->show();
 }
 
+//Show list window
+void MainWindow::on_pushButton_3_clicked()
+{
+    listWindow = new ListWindow(teamList);
+    listWindow->showMaximized();
+}
+
 //Show capacity window
 void MainWindow::on_pushButton_4_clicked()
 {
@@ -44,11 +52,3 @@ void MainWindow::on_pushButton_5_clicked()
     loginWindow = new LoginWindow();
     loginWindow->show();
 }
-
-//Show list window
-void MainWindow::on_pushButton_3_clicked()
-{
-    listWindow = new ListWindow();
-    listWindow->show();
-}
-
