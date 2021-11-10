@@ -2,6 +2,7 @@
 #define CONTACTUSWINDOW_H
 
 #include <QWidget>
+#include <QIcon>
 
 namespace Ui {
 class ContactUsWindow;

@@ -12,6 +12,7 @@ MaintenanceWindow::MaintenanceWindow(TeamList* teamList, TeamList* expansionList
     ui->setupUi(this);
     this->setFixedSize(500,500);
     this->setWindowTitle("Maintenance");
+    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
     this->teamList = teamList;
     this->expansionList = expansionList;
 }

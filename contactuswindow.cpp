@@ -8,6 +8,7 @@ ContactUsWindow::ContactUsWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(400,300);
     this->setWindowTitle("Contact Us");
+    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 }
 
 ContactUsWindow::~ContactUsWindow()

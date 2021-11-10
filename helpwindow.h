@@ -2,6 +2,7 @@
 #define HELPWINDOW_H
 
 #include <QWidget>
+#include <QIcon>
 
 
 namespace Ui {

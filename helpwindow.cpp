@@ -8,6 +8,7 @@ HelpWindow::HelpWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(400,300);
     this->setWindowTitle("Help");
+    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 }
 
 HelpWindow::~HelpWindow()

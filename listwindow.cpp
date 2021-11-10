@@ -10,6 +10,7 @@ ListWindow::ListWindow(TeamList *list, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Teams List");
+    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 
     QHeaderView* header = ui->tableWidget->horizontalHeader();
     header->setSectionResizeMode(QHeaderView::Stretch);

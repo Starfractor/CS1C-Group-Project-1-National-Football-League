@@ -10,6 +10,7 @@ LoginWindow::LoginWindow(TeamList* teamList, TeamList* expansionList, QWidget *p
     ui->setupUi(this);
     this->setFixedSize(400,300);
     this->setWindowTitle("Login Required");
+    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
     this->teamList = teamList;
     this->expansionList = expansionList;
 }

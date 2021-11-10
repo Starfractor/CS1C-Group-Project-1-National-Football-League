@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->setFixedSize(500,500);
     this->setWindowTitle("National Football League");
+    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 
     teamList = new TeamList(QFile(":/data/Football Teams/Original Teams.csv"));
     expansionList = new TeamList(QFile(":/data/Football Teams/Original Expansion Teams.csv"));

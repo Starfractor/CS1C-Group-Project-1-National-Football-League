@@ -9,6 +9,7 @@ CapacityWindow::CapacityWindow(TeamList *teamList, QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(200,100);
     this->setWindowTitle("Stadium Capacity");
+    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 
     int capacity = 0;
 

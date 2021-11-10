@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/data">
         <file>Football Teams/Original Teams.csv</file>
+        <file>Football Teams/Original Expansion Teams.csv</file>
+    </qresource>
+    <qresource prefix="/images"/>
+    <qresource prefix="/images" lang="C++"/>
+    <qresource prefix="/pictures">
+        <file>Images/Icon Image.jpg</file>
+        <file>Images/Main Window Image.jpg</file>
     </qresource>
 </RCC>
