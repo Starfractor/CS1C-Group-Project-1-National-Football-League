@@ -5,7 +5,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 
-MaintenanceWindow::MaintenanceWindow(TeamList* teamList, QWidget *parent) :
+MaintenanceWindow::MaintenanceWindow(TeamList* teamList, TeamList* expansionList, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MaintenanceWindow)
 {
@@ -13,6 +13,7 @@ MaintenanceWindow::MaintenanceWindow(TeamList* teamList, QWidget *parent) :
     this->setFixedSize(500,500);
     this->setWindowTitle("Maintenance");
     this->teamList = teamList;
+    this->expansionList = expansionList;
 }
 
 MaintenanceWindow::~MaintenanceWindow()
@@ -25,5 +26,11 @@ void MaintenanceWindow::on_pushButton_uploadFile_clicked()
 {
     teamList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)"));
 
+}
+
+
+void MaintenanceWindow::on_pushButton_uploadFile2_clicked()
+{
+    expansionList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)"));
 }
 

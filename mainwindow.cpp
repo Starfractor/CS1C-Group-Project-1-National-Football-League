@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowTitle("National Football League");
 
     teamList = new TeamList(QFile(":/data/Football Teams/Original Teams.csv"));
+    expansionList = new TeamList(QFile(":/data/Football Teams/Original Expansion Teams.csv"));
 }
 
 MainWindow::~MainWindow()
@@ -49,6 +50,6 @@ void MainWindow::on_pushButton_4_clicked()
 //Show login window
 void MainWindow::on_pushButton_5_clicked()
 {
-    loginWindow = new LoginWindow(teamList);
+    loginWindow = new LoginWindow(teamList, expansionList);
     loginWindow->show();
 }

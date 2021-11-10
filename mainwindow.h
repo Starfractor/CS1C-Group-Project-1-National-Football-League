@@ -35,6 +35,7 @@ private:
     LoginWindow* loginWindow;
     ListWindow* listWindow;
     TeamList *teamList;
+    TeamList *expansionList;
 };
 
 #endif // MAINWINDOW_H

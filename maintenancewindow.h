@@ -13,15 +13,18 @@ class MaintenanceWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit MaintenanceWindow(TeamList* teamList, QWidget *parent = nullptr);
+    explicit MaintenanceWindow(TeamList* teamList, TeamList* expansionList, QWidget *parent = nullptr);
     ~MaintenanceWindow();
 
 private slots:
     void on_pushButton_uploadFile_clicked();
 
+    void on_pushButton_uploadFile2_clicked();
+
 private:
     Ui::MaintenanceWindow *ui;
     TeamList* teamList;
+    TeamList* expansionList;
 };
 
 #endif // MAINTENANCEWINDOW_H
