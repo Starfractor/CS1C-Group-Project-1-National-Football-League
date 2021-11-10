@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "maintenancewindow.h"
+#include "teamlist.h"
 
 namespace Ui {
 class LoginWindow;
@@ -13,7 +14,7 @@ class LoginWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit LoginWindow(QWidget *parent = nullptr);
+    explicit LoginWindow(TeamList* teamList, QWidget *parent = nullptr);
     ~LoginWindow();
 
 private slots:
@@ -24,6 +25,7 @@ private slots:
 private:
     Ui::LoginWindow *ui;
     MaintenanceWindow* maintenanceWindow;
+    TeamList* teamList;
 };
 
 #endif // LOGINWINDOW_H

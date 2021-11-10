@@ -49,6 +49,6 @@ void MainWindow::on_pushButton_4_clicked()
 //Show login window
 void MainWindow::on_pushButton_5_clicked()
 {
-    loginWindow = new LoginWindow();
+    loginWindow = new LoginWindow(teamList);
     loginWindow->show();
 }

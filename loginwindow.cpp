@@ -3,13 +3,14 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 
-LoginWindow::LoginWindow(QWidget *parent) :
+LoginWindow::LoginWindow(TeamList* teamList, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
     this->setFixedSize(400,300);
     this->setWindowTitle("Login Required");
+    this->teamList = teamList;
 }
 
 LoginWindow::~LoginWindow()
@@ -31,7 +32,7 @@ void LoginWindow::on_pushButton_login_clicked()
     {
         QMessageBox::information(this, "Success", "Login Successful");
         hide();
-        maintenanceWindow = new MaintenanceWindow();
+        maintenanceWindow = new MaintenanceWindow(teamList);
         maintenanceWindow->show();
     }
     else

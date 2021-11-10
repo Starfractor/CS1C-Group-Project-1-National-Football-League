@@ -2,6 +2,7 @@
 #define MAINTENANCEWINDOW_H
 
 #include <QWidget>
+#include "teamlist.h"
 
 namespace Ui {
 class MaintenanceWindow;
@@ -12,7 +13,7 @@ class MaintenanceWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit MaintenanceWindow(QWidget *parent = nullptr);
+    explicit MaintenanceWindow(TeamList* teamList, QWidget *parent = nullptr);
     ~MaintenanceWindow();
 
 private slots:
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::MaintenanceWindow *ui;
+    TeamList* teamList;
 };
 
 #endif // MAINTENANCEWINDOW_H
