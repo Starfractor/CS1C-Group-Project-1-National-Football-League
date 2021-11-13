@@ -37,7 +37,7 @@ void MainWindow::on_pushButton_2_clicked()
 //Show list window
 void MainWindow::on_pushButton_3_clicked()
 {
-    listWindow = new ListWindow(teamList);
+    listWindow = new ListWindow(teamList, expansionList);
     listWindow->showMaximized();
 }
 

@@ -4,63 +4,137 @@
 
 #include <QPushButton>
 
-ListWindow::ListWindow(TeamList *list, QWidget *parent) :
+ListWindow::ListWindow(TeamList *teamIn, TeamList *expansionIn, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ListWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Teams List");
     this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 
     QHeaderView* header = ui->tableWidget->horizontalHeader();
     header->setSectionResizeMode(QHeaderView::Stretch);
 
-    ui->tableWidget->setRowCount(list->getTeamList().length());
+    teamList = teamIn;
+    expansionList = expansionIn;
+    buttonState = false;
 
-    for(int i = 0; i < list->getTeamList().size(); i++)
+    displayTeamList();
+}
+
+ListWindow::~ListWindow()
+{
+    delete ui;
+}
+
+void ListWindow::on_pushButton_clicked()
+{
+    buttonState = !buttonState;
+
+    if(buttonState)
+    {
+        displayExpansionList();
+    }
+    else
+    {
+        displayTeamList();
+    }
+
+}
+
+void ListWindow::displayTeamList()
+{
+    this->setWindowTitle("Teams List");
+
+    ui->pushButton->setText("Switch to Expansion Teams");
+    ui->tableWidget->setRowCount(teamList->getTeamList().length());
+
+    for(int i = 0; i < teamList->getTeamList().size(); i++)
     {
         for(int j = 0; j < 9; j++)
         {
             switch(j)
             {
             case 0:
-                ui->tableWidget->setItem(i, 0, new QTableWidgetItem(list->getTeamList()[i].getTeamName()));
+                ui->tableWidget->setItem(i, 0, new QTableWidgetItem(teamList->getTeamList().at(i).getTeamName()));
                 break;
             case 1:
-                ui->tableWidget->setItem(i, 1, new QTableWidgetItem(list->getTeamList()[i].getStadiumName()));
+                ui->tableWidget->setItem(i, 1, new QTableWidgetItem(teamList->getTeamList().at(i).getStadiumName()));
                 break;
             case 2:
-                ui->tableWidget->setItem(i, 2, new QTableWidgetItem(list->getTeamList()[i].getSeatingCapacity()));
+                ui->tableWidget->setItem(i, 2, new QTableWidgetItem(teamList->getTeamList().at(i).getSeatingCapacity()));
                 break;
             case 3:
-                ui->tableWidget->setItem(i, 3, new QTableWidgetItem(list->getTeamList()[i].getLocation()));
+                ui->tableWidget->setItem(i, 3, new QTableWidgetItem(teamList->getTeamList().at(i).getLocation()));
                 break;
             case 4:
-                ui->tableWidget->setItem(i, 4, new QTableWidgetItem(list->getTeamList()[i].getConference()));
+                ui->tableWidget->setItem(i, 4, new QTableWidgetItem(teamList->getTeamList().at(i).getConference()));
                 break;
             case 5:
-                ui->tableWidget->setItem(i, 5, new QTableWidgetItem(list->getTeamList()[i].getDivision()));
+                ui->tableWidget->setItem(i, 5, new QTableWidgetItem(teamList->getTeamList().at(i).getDivision()));
                 break;
             case 6:
-                ui->tableWidget->setItem(i, 6, new QTableWidgetItem(list->getTeamList()[i].getSurfaceType()));
+                ui->tableWidget->setItem(i, 6, new QTableWidgetItem(teamList->getTeamList().at(i).getSurfaceType()));
                 break;
             case 7:
-                ui->tableWidget->setItem(i, 7, new QTableWidgetItem(list->getTeamList()[i].getStadiumRoofType()));
+                ui->tableWidget->setItem(i, 7, new QTableWidgetItem(teamList->getTeamList().at(i).getStadiumRoofType()));
                 break;
             case 8:
             {
                 QTableWidgetItem *item = new QTableWidgetItem();
-                item->setData(Qt::DisplayRole, list->getTeamList()[i].getDateOpened());
+                item->setData(Qt::DisplayRole, teamList->getTeamList().at(i).getDateOpened());
                 ui->tableWidget->setItem(i, 8, item);
                 break;
             }
             }
         }
     }
-
 }
 
-ListWindow::~ListWindow()
+void ListWindow::displayExpansionList()
 {
-    delete ui;
+    this->setWindowTitle("Expansion Teams List");
+
+    ui->pushButton->setText("Switch to NFL Teams");
+    ui->tableWidget->setRowCount(expansionList->getTeamList().length());
+
+    for(int i = 0; i < expansionList->getTeamList().size(); i++)
+    {
+        for(int j = 0; j < 9; j++)
+        {
+            switch(j)
+            {
+            case 0:
+                ui->tableWidget->setItem(i, 0, new QTableWidgetItem(expansionList->getTeamList().at(i).getTeamName()));
+                break;
+            case 1:
+                ui->tableWidget->setItem(i, 1, new QTableWidgetItem(expansionList->getTeamList().at(i).getStadiumName()));
+                break;
+            case 2:
+                ui->tableWidget->setItem(i, 2, new QTableWidgetItem(expansionList->getTeamList().at(i).getSeatingCapacity()));
+                break;
+            case 3:
+                ui->tableWidget->setItem(i, 3, new QTableWidgetItem(expansionList->getTeamList().at(i).getLocation()));
+                break;
+            case 4:
+                ui->tableWidget->setItem(i, 4, new QTableWidgetItem(expansionList->getTeamList().at(i).getConference()));
+                break;
+            case 5:
+                ui->tableWidget->setItem(i, 5, new QTableWidgetItem(expansionList->getTeamList().at(i).getDivision()));
+                break;
+            case 6:
+                ui->tableWidget->setItem(i, 6, new QTableWidgetItem(expansionList->getTeamList().at(i).getSurfaceType()));
+                break;
+            case 7:
+                ui->tableWidget->setItem(i, 7, new QTableWidgetItem(expansionList->getTeamList().at(i).getStadiumRoofType()));
+                break;
+            case 8:
+            {
+                QTableWidgetItem *item = new QTableWidgetItem();
+                item->setData(Qt::DisplayRole, expansionList->getTeamList().at(i).getDateOpened());
+                ui->tableWidget->setItem(i, 8, item);
+                break;
+            }
+            }
+        }
+    }
 }
