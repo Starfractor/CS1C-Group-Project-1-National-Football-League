@@ -46,6 +46,8 @@ void ListWindow::displayTeamList()
     this->setWindowTitle("Teams List");
 
     ui->pushButton->setText("Switch to Expansion Teams");
+
+    ui->tableWidget->setSortingEnabled(false);
     ui->tableWidget->setRowCount(teamList->getTeamList().length());
 
     for(int i = 0; i < teamList->getTeamList().size(); i++)
@@ -88,6 +90,8 @@ void ListWindow::displayTeamList()
             }
         }
     }
+
+    ui->tableWidget->setSortingEnabled(true);
 }
 
 void ListWindow::displayExpansionList()
@@ -95,6 +99,8 @@ void ListWindow::displayExpansionList()
     this->setWindowTitle("Expansion Teams List");
 
     ui->pushButton->setText("Switch to NFL Teams");
+
+    ui->tableWidget->setSortingEnabled(false);
     ui->tableWidget->setRowCount(expansionList->getTeamList().length());
 
     for(int i = 0; i < expansionList->getTeamList().size(); i++)
@@ -137,4 +143,6 @@ void ListWindow::displayExpansionList()
             }
         }
     }
+
+    ui->tableWidget->setSortingEnabled(true);
 }
