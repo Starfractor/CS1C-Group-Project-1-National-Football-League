@@ -26,12 +26,9 @@ MaintenanceWindow::~MaintenanceWindow()
 void MaintenanceWindow::on_pushButton_uploadFile_clicked()
 {
     teamList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)"));
-
 }
-
 
 void MaintenanceWindow::on_pushButton_uploadFile2_clicked()
 {
     expansionList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)"));
 }
-

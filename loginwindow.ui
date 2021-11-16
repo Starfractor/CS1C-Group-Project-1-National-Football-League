@@ -18,7 +18,7 @@
     <rect>
      <x>90</x>
      <y>80</y>
-     <width>191</width>
+     <width>201</width>
      <height>121</height>
     </rect>
    </property>
@@ -30,7 +30,7 @@
      <rect>
       <x>6</x>
       <y>40</y>
-      <width>61</width>
+      <width>71</width>
       <height>20</height>
      </rect>
     </property>
@@ -41,7 +41,7 @@
    <widget class="QLineEdit" name="lineEdit_password">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>70</x>
       <y>40</y>
       <width>113</width>
       <height>21</height>
@@ -57,7 +57,7 @@
       <x>60</x>
       <y>80</y>
       <width>80</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="layoutDirection">

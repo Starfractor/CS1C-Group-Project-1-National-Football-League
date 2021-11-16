@@ -44,7 +44,7 @@ void MainWindow::on_pushButton_3_clicked()
 //Show capacity window
 void MainWindow::on_pushButton_4_clicked()
 {
-    capacityWindow = new CapacityWindow(teamList);
+    capacityWindow = new CapacityWindow(teamList, expansionList);
     capacityWindow->show();
 }
 

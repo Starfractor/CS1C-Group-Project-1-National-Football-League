@@ -4,7 +4,7 @@
 
 #include <QPushButton>
 
-ListWindow::ListWindow(TeamList *teamIn, TeamList *expansionIn, QWidget *parent) :
+ListWindow::ListWindow(TeamList *teamList, TeamList *expansionList, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ListWindow)
 {
@@ -14,8 +14,8 @@ ListWindow::ListWindow(TeamList *teamIn, TeamList *expansionIn, QWidget *parent)
     QHeaderView* header = ui->tableWidget->horizontalHeader();
     header->setSectionResizeMode(QHeaderView::Stretch);
 
-    teamList = teamIn;
-    expansionList = expansionIn;
+    this->teamList = teamList;
+    this->expansionList = expansionList;
     buttonState = false;
 
     displayTeamList();
@@ -38,7 +38,6 @@ void ListWindow::on_pushButton_clicked()
     {
         displayTeamList();
     }
-
 }
 
 void ListWindow::displayTeamList()
