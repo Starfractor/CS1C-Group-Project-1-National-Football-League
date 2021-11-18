@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowTitle("National Football League");
     this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 
-    teamList = new TeamList(QFile(":/data/Football Teams/Original Teams.csv"));
+    nflList = new TeamList(QFile(":/data/Football Teams/Original Teams.csv"));
     expansionList = new TeamList(QFile(":/data/Football Teams/Original Expansion Teams.csv"));
 }
 
@@ -37,20 +37,20 @@ void MainWindow::on_pushButton_2_clicked()
 //Show list window
 void MainWindow::on_pushButton_3_clicked()
 {
-    listWindow = new ListWindow(teamList, expansionList);
+    listWindow = new ListWindow(nflList, expansionList);
     listWindow->showMaximized();
 }
 
 //Show capacity window
 void MainWindow::on_pushButton_4_clicked()
 {
-    capacityWindow = new CapacityWindow(teamList, expansionList);
+    capacityWindow = new CapacityWindow(nflList, expansionList);
     capacityWindow->show();
 }
 
 //Show login window
 void MainWindow::on_pushButton_5_clicked()
 {
-    loginWindow = new LoginWindow(teamList, expansionList);
+    loginWindow = new LoginWindow(nflList, expansionList);
     loginWindow->show();
 }

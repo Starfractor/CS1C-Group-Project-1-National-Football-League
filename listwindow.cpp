@@ -1,24 +1,45 @@
 #include "listwindow.h"
 #include "ui_listwindow.h"
 #include "teamlist.h"
+#include "sortfilterproxymodel.h"
+#include "qheaderview.h"
 
 #include <QPushButton>
+#include <QSortFilterProxyModel>
 
-ListWindow::ListWindow(TeamList *teamList, TeamList *expansionList, QWidget *parent) :
+ListWindow::ListWindow(TeamList *nflList, TeamList *expansionList, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ListWindow)
 {
     ui->setupUi(this);
     this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 
-    QHeaderView* header = ui->tableWidget->horizontalHeader();
-    header->setSectionResizeMode(QHeaderView::Stretch);
+    tableView = new MultisortTableView();
+    ui->verticalLayout->addWidget(tableView);
+    tableView->setSortingEnabled(true);
+    tableView->setSelectionMode(QAbstractItemView::NoSelection);
+    tableView->setModifier(Qt::ShiftModifier);
 
-    this->teamList = teamList;
-    this->expansionList = expansionList;
+    QHeaderView* header = tableView->horizontalHeader();
+    header->setSectionResizeMode(QHeaderView::ResizeToContents);
+
+    nflModel = new TeamListModel(nflList);
+    expansionModel = new TeamListModel(expansionList);
     buttonState = false;
 
-    displayTeamList();
+    proxyNFLModel = new SortFilterProxyModel();
+    proxyExpansionModel = new SortFilterProxyModel();
+
+    proxyNFLModel->setSourceModel(nflModel);
+    proxyExpansionModel->setSourceModel(expansionModel);
+
+    adapter = new HeaderSortingAdapter(tableView);
+
+    switchList = new QPushButton;
+    connect(switchList, &QPushButton::clicked, this, &ListWindow::switchListClicked);
+    ui->verticalLayout->addWidget(switchList);
+
+    displayNFLList();
 }
 
 ListWindow::~ListWindow()
@@ -26,7 +47,7 @@ ListWindow::~ListWindow()
     delete ui;
 }
 
-void ListWindow::on_pushButton_clicked()
+void ListWindow::switchListClicked()
 {
     buttonState = !buttonState;
 
@@ -36,112 +57,20 @@ void ListWindow::on_pushButton_clicked()
     }
     else
     {
-        displayTeamList();
+        displayNFLList();
     }
 }
 
-void ListWindow::displayTeamList()
+void ListWindow::displayNFLList()
 {
-    this->setWindowTitle("Teams List");
-
-    ui->pushButton->setText("Switch to Expansion Teams");
-
-    ui->tableWidget->setSortingEnabled(false);
-    ui->tableWidget->setRowCount(teamList->getTeamList().length());
-
-    for(int i = 0; i < teamList->getTeamList().size(); i++)
-    {
-        for(int j = 0; j < 9; j++)
-        {
-            switch(j)
-            {
-            case 0:
-                ui->tableWidget->setItem(i, 0, new QTableWidgetItem(teamList->getTeamList().at(i).getTeamName()));
-                break;
-            case 1:
-                ui->tableWidget->setItem(i, 1, new QTableWidgetItem(teamList->getTeamList().at(i).getStadiumName()));
-                break;
-            case 2:
-                ui->tableWidget->setItem(i, 2, new QTableWidgetItem(teamList->getTeamList().at(i).getSeatingCapacity()));
-                break;
-            case 3:
-                ui->tableWidget->setItem(i, 3, new QTableWidgetItem(teamList->getTeamList().at(i).getLocation()));
-                break;
-            case 4:
-                ui->tableWidget->setItem(i, 4, new QTableWidgetItem(teamList->getTeamList().at(i).getConference()));
-                break;
-            case 5:
-                ui->tableWidget->setItem(i, 5, new QTableWidgetItem(teamList->getTeamList().at(i).getDivision()));
-                break;
-            case 6:
-                ui->tableWidget->setItem(i, 6, new QTableWidgetItem(teamList->getTeamList().at(i).getSurfaceType()));
-                break;
-            case 7:
-                ui->tableWidget->setItem(i, 7, new QTableWidgetItem(teamList->getTeamList().at(i).getStadiumRoofType()));
-                break;
-            case 8:
-            {
-                QTableWidgetItem *item = new QTableWidgetItem();
-                item->setData(Qt::DisplayRole, teamList->getTeamList().at(i).getDateOpened());
-                ui->tableWidget->setItem(i, 8, item);
-                break;
-            }
-            }
-        }
-    }
-
-    ui->tableWidget->setSortingEnabled(true);
+    this->setWindowTitle("NFL Teams List");
+    switchList->setText("Switch to Expansion Teams");
+    tableView->setModel(proxyNFLModel);
 }
 
 void ListWindow::displayExpansionList()
 {
     this->setWindowTitle("Expansion Teams List");
-
-    ui->pushButton->setText("Switch to NFL Teams");
-
-    ui->tableWidget->setSortingEnabled(false);
-    ui->tableWidget->setRowCount(expansionList->getTeamList().length());
-
-    for(int i = 0; i < expansionList->getTeamList().size(); i++)
-    {
-        for(int j = 0; j < 9; j++)
-        {
-            switch(j)
-            {
-            case 0:
-                ui->tableWidget->setItem(i, 0, new QTableWidgetItem(expansionList->getTeamList().at(i).getTeamName()));
-                break;
-            case 1:
-                ui->tableWidget->setItem(i, 1, new QTableWidgetItem(expansionList->getTeamList().at(i).getStadiumName()));
-                break;
-            case 2:
-                ui->tableWidget->setItem(i, 2, new QTableWidgetItem(expansionList->getTeamList().at(i).getSeatingCapacity()));
-                break;
-            case 3:
-                ui->tableWidget->setItem(i, 3, new QTableWidgetItem(expansionList->getTeamList().at(i).getLocation()));
-                break;
-            case 4:
-                ui->tableWidget->setItem(i, 4, new QTableWidgetItem(expansionList->getTeamList().at(i).getConference()));
-                break;
-            case 5:
-                ui->tableWidget->setItem(i, 5, new QTableWidgetItem(expansionList->getTeamList().at(i).getDivision()));
-                break;
-            case 6:
-                ui->tableWidget->setItem(i, 6, new QTableWidgetItem(expansionList->getTeamList().at(i).getSurfaceType()));
-                break;
-            case 7:
-                ui->tableWidget->setItem(i, 7, new QTableWidgetItem(expansionList->getTeamList().at(i).getStadiumRoofType()));
-                break;
-            case 8:
-            {
-                QTableWidgetItem *item = new QTableWidgetItem();
-                item->setData(Qt::DisplayRole, expansionList->getTeamList().at(i).getDateOpened());
-                ui->tableWidget->setItem(i, 8, item);
-                break;
-            }
-            }
-        }
-    }
-
-    ui->tableWidget->setSortingEnabled(true);
+    switchList->setText("Switch to NFL Teams");
+    tableView->setModel(proxyExpansionModel);
 }

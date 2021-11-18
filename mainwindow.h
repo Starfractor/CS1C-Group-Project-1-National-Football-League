@@ -34,7 +34,8 @@ private:
     CapacityWindow* capacityWindow;
     LoginWindow* loginWindow;
     ListWindow* listWindow;
-    TeamList *teamList;
+
+    TeamList *nflList;
     TeamList *expansionList;
 };
 

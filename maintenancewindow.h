@@ -13,7 +13,7 @@ class MaintenanceWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit MaintenanceWindow(TeamList* teamList, TeamList* expansionList, QWidget *parent = nullptr);
+    explicit MaintenanceWindow(TeamList* nflList, TeamList* expansionList, QWidget *parent = nullptr);
     ~MaintenanceWindow();
 
 private slots:
@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::MaintenanceWindow *ui;
-    TeamList* teamList;
+    TeamList* nflList;
     TeamList* expansionList;
 };
 

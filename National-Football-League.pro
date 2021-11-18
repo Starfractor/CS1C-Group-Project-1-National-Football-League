@@ -9,12 +9,15 @@ SOURCES +=  main.cpp \
     capacitywindow.cpp \
     contactuswindow.cpp \
     footballteam.cpp \
+    headersortingadapter.cpp \
     helpwindow.cpp \
     listwindow.cpp \
     loginwindow.cpp \
     maintenancewindow.cpp \
     mainwindow.cpp \
-    teamlist.cpp
+    multisorttableview.cpp \
+    teamlist.cpp \
+    teamlistmodel.cpp
 
 FORMS += \
     capacitywindow.ui \
@@ -26,15 +29,22 @@ FORMS += \
     mainwindow.ui
 
 HEADERS += \
+    alphanumcomparer.h \
+    alphanumsortproxymodel.h \
     capacitywindow.h \
+    columnssorter.h \
     contactuswindow.h \
     footballteam.h \
+    headersortingadapter.h \
     helpwindow.h \
     listwindow.h \
     loginwindow.h \
     maintenancewindow.h \
     mainwindow.h \
-    teamlist.h
+    multisorttableview.h \
+    sortfilterproxymodel.h \
+    teamlist.h \
+    teamlistmodel.h
 
 RESOURCES += \
     Resources.qrc

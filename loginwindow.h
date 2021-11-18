@@ -14,7 +14,7 @@ class LoginWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit LoginWindow(TeamList* teamList, TeamList* expansionList, QWidget *parent = nullptr);
+    explicit LoginWindow(TeamList* nflList, TeamList* expansionList, QWidget *parent = nullptr);
     ~LoginWindow();
 
 private slots:
@@ -25,7 +25,7 @@ private slots:
 private:
     Ui::LoginWindow *ui;
     MaintenanceWindow* maintenanceWindow;
-    TeamList* teamList;
+    TeamList* nflList;
     TeamList* expansionList;
 };
 

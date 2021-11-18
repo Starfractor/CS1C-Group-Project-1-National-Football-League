@@ -3,7 +3,12 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include <QSortFilterProxyModel>
 #include "teamlist.h"
+#include "teamlistmodel.h"
+#include "headersortingadapter.h"
+#include "sortfilterproxymodel.h"
+#include "multisorttableview.h"
 
 namespace Ui {
 class ListWindow;
@@ -14,17 +19,23 @@ class ListWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit ListWindow(TeamList *teamList, TeamList *expansionList, QWidget *parent = nullptr);
+    explicit ListWindow(TeamList *nflList, TeamList *expansionList, QWidget *parent = nullptr);
     ~ListWindow();
 private slots:
-    void on_pushButton_clicked();
+    void switchListClicked();
 private:
     Ui::ListWindow *ui;
-    TeamList *teamList;
-    TeamList *expansionList;
+    TeamListModel *nflModel;
+    TeamListModel *expansionModel;
+    SortFilterProxyModel *proxyNFLModel;
+    SortFilterProxyModel *proxyExpansionModel;
+    HeaderSortingAdapter *adapter;
+    MultisortTableView *tableView;
+    QPushButton *switchList;
+
     bool buttonState;
 
-    void displayTeamList();
+    void displayNFLList();
     void displayExpansionList();
 };
 

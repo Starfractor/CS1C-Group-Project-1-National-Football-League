@@ -13,7 +13,7 @@ class CapacityWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit CapacityWindow(TeamList *teamList, TeamList *expansionList, QWidget *parent = nullptr);
+    explicit CapacityWindow(TeamList *nflList, TeamList *expansionList, QWidget *parent = nullptr);
     ~CapacityWindow();
 
 private slots:
@@ -22,11 +22,12 @@ private slots:
 private:
     Ui::CapacityWindow *ui;
     bool buttonState;
-    QString teamString;
+    QString nflString;
     QString expansionString;
 
-    void displayTeamCapacity();
+    void displayNFLCapacity();
     void displayExpansionCapacity();
+    QString listToCapacity(TeamList *);
 };
 
 #endif // CAPACITYWINDOW_H
