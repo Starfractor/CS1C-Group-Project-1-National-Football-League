@@ -8,7 +8,7 @@ CapacityWindow::CapacityWindow(TeamList *nflList, TeamList *expansionList, QWidg
 {
     ui->setupUi(this);
     this->setFixedSize(300,100);
-    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
+    this->setWindowIcon(QIcon(":/images/Images/Icon Image.jpg"));
 
     buttonState = false;
 

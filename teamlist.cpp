@@ -34,11 +34,12 @@ TeamList::TeamList(QFile file)
     }
 }
 
-void TeamList::update(QFile file)
+bool TeamList::update(QFile file)
 {
     if(!file.open(QIODevice::ReadOnly))
     {
         qDebug() << file.errorString();
+        return false;
     }
 
     //Reads a line and takes stores data
@@ -65,19 +66,11 @@ void TeamList::update(QFile file)
             if(!alreadyExists(team))
             {
                 teamList.push_back(team);
+                return true;
             }
         }
     }
-}
-
-void TeamList::printList()
-{
-
-}
-
-void TeamList::sortList(category category)
-{
-
+    return false;
 }
 
 bool TeamList::alreadyExists(FootballTeam team)

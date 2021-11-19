@@ -33,11 +33,14 @@
      <property name="acceptDrops">
       <bool>false</bool>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Resources.qrc">:/pictures/Images/Main Window Image.jpg</pixmap>
+      <pixmap resource="Resources.qrc">:/images/Images/Main Window Image.jpg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>

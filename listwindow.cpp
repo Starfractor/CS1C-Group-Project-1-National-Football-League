@@ -12,7 +12,7 @@ ListWindow::ListWindow(TeamList *nflList, TeamList *expansionList, QWidget *pare
     ui(new Ui::ListWindow)
 {
     ui->setupUi(this);
-    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
+    this->setWindowIcon(QIcon(":/images/Images/Icon Image.jpg"));
 
     nflModel = new TeamListModel(nflList);
     expansionModel = new TeamListModel(expansionList);
@@ -29,9 +29,8 @@ ListWindow::ListWindow(TeamList *nflList, TeamList *expansionList, QWidget *pare
     tableView->setSortingEnabled(true);
     tableView->setSelectionMode(QAbstractItemView::NoSelection);
     tableView->setModifier(Qt::ShiftModifier);
+    tableView->setSortIcons(QIcon(":/images/Images/bullet_arrow_up.png"), QIcon(":/images/Images/bullet_arrow_down.png"));
     tableView->setModel(proxyNFLModel);
-
-    adapter = new HeaderSortingAdapter(tableView);
 
     tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);

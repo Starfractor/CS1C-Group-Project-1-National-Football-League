@@ -9,7 +9,6 @@ SOURCES +=  main.cpp \
     capacitywindow.cpp \
     contactuswindow.cpp \
     footballteam.cpp \
-    headersortingadapter.cpp \
     helpwindow.cpp \
     listwindow.cpp \
     loginwindow.cpp \
@@ -35,7 +34,6 @@ HEADERS += \
     columnssorter.h \
     contactuswindow.h \
     footballteam.h \
-    headersortingadapter.h \
     helpwindow.h \
     listwindow.h \
     loginwindow.h \
@@ -48,3 +46,6 @@ HEADERS += \
 
 RESOURCES += \
     Resources.qrc
+
+CONFIG += \
+    sdk_no_version_check

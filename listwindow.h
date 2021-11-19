@@ -29,7 +29,6 @@ private:
     TeamListModel *expansionModel;
     SortFilterProxyModel *proxyNFLModel;
     SortFilterProxyModel *proxyExpansionModel;
-    HeaderSortingAdapter *adapter;
     MultisortTableView *tableView;
     QPushButton *switchListButton;
 

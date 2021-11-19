@@ -20,8 +20,6 @@ public:
 private slots:
     void on_pushButton_login_clicked();
 
-    void on_pushButton_login_pressed();
-
 private:
     Ui::LoginWindow *ui;
     MaintenanceWindow* maintenanceWindow;

@@ -7,64 +7,42 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>300</height>
+    <height>79</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>40</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Update the Team List</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_uploadFile">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>100</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Upload File</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>320</x>
-     <y>40</y>
-     <width>171</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Update the Expansions Team List</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_uploadFile2">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>100</y>
-     <width>80</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Upload File</string>
-   </property>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pushButton_uploadFile">
+     <property name="text">
+      <string>Upload File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="pushButton_uploadFile2">
+     <property name="text">
+      <string>Upload File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Update the Expansions Team List</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" alignment="Qt::AlignHCenter">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Update the Team List</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

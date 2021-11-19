@@ -16,6 +16,7 @@ public:
 
     // Set key modifier to handle multicolumn sorting
     void setModifier ( Qt::KeyboardModifier modifier );
+    void setSortIcons ( QIcon ascIcon, QIcon descIcon );
 
     virtual void setSortingEnabled ( bool enable );
     virtual void setModel ( QAbstractItemModel *model );

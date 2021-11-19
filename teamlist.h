@@ -16,9 +16,7 @@ public:
     enum category {teamName, stadiumName, seatingCapacity, location, conference, division, surfaceType, stadiumRoofType, dateOpened};
     TeamList();
     TeamList(QFile file);
-    void update(QFile file);
-    void printList();
-    void sortList(category category);
+    bool update(QFile file);
     bool alreadyExists(FootballTeam team);
     QList<FootballTeam> getTeamList() const;
 private:

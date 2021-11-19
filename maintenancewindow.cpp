@@ -10,9 +10,9 @@ MaintenanceWindow::MaintenanceWindow(TeamList* nflList, TeamList* expansionList,
     ui(new Ui::MaintenanceWindow)
 {
     ui->setupUi(this);
-    this->setFixedSize(500,500);
+    this->setFixedSize(500,100);
     this->setWindowTitle("Maintenance");
-    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
+    this->setWindowIcon(QIcon(":/images/Images/Icon Image.jpg"));
     this->nflList = nflList;
     this->expansionList = expansionList;
 }
@@ -25,10 +25,24 @@ MaintenanceWindow::~MaintenanceWindow()
 //Opens upload file window and allows admin to update file
 void MaintenanceWindow::on_pushButton_uploadFile_clicked()
 {
-    nflList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)"));
+    if(nflList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)")))
+    {
+        QMessageBox::information(this, "Success", "Update Successful");
+    }
+    else
+    {
+        QMessageBox::information(this, "Failure", "Update Failed");
+    }
 }
 
 void MaintenanceWindow::on_pushButton_uploadFile2_clicked()
 {
-    expansionList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)"));
+    if(expansionList->update(QFileDialog::getOpenFileName(this, tr("Upload File"), "C://", "Text File (*.txt) CSV (*.csv)")))
+    {
+        QMessageBox::information(this, "Success", "Update Successful");
+    }
+    else
+    {
+        QMessageBox::information(this, "Failure", "Update Failed");
+    }
 }

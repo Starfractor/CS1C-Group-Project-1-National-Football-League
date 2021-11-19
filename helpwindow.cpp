@@ -6,17 +6,12 @@ HelpWindow::HelpWindow(QWidget *parent) :
     ui(new Ui::HelpWindow)
 {
     ui->setupUi(this);
-    this->setFixedSize(400,300);
+    this->setFixedSize(600,400);
     this->setWindowTitle("Help");
-    this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
+    this->setWindowIcon(QIcon(":/images/Images/Icon Image.jpg"));
 }
 
 HelpWindow::~HelpWindow()
 {
     delete ui;
-}
-
-void HelpWindow::on_pushButton_clicked()
-{
-
 }

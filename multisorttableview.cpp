@@ -13,6 +13,8 @@ MultisortTableView::MultisortTableView ( QWidget *parent ) :
     m_proxyModel = new AlphanumSortProxyModel( this );
     m_modifier = Qt::ControlModifier;
     // Default icon
+    setSortIcons( style()->standardIcon( QStyle::SP_TitleBarShadeButton ),
+                  style()->standardIcon( QStyle::SP_TitleBarUnshadeButton ) );
     horizontalHeader()->setDefaultAlignment( Qt::AlignLeft );
 
     // Handler to sorting table
@@ -20,6 +22,10 @@ MultisortTableView::MultisortTableView ( QWidget *parent ) :
              this,               SLOT(headerClicked(int)) );
 }
 
+void MultisortTableView::setSortIcons ( QIcon ascIcon, QIcon descIcon )
+{
+    m_proxyModel->setSortIcons( ascIcon, descIcon );
+}
 
 // Set key modifier to handle multicolumn sorting
 void MultisortTableView::setModifier ( Qt::KeyboardModifier modifier )
