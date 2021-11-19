@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this); 
 
-    this->setFixedSize(500,500);
+    this->setFixedSize(600,600);
     this->setWindowTitle("National Football League");
     this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 

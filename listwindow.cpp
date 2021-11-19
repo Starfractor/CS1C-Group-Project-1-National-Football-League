@@ -14,15 +14,6 @@ ListWindow::ListWindow(TeamList *nflList, TeamList *expansionList, QWidget *pare
     ui->setupUi(this);
     this->setWindowIcon(QIcon(":/pictures/Images/Icon Image.jpg"));
 
-    tableView = new MultisortTableView();
-    ui->verticalLayout->addWidget(tableView);
-    tableView->setSortingEnabled(true);
-    tableView->setSelectionMode(QAbstractItemView::NoSelection);
-    tableView->setModifier(Qt::ShiftModifier);
-
-    QHeaderView* header = tableView->horizontalHeader();
-    header->setSectionResizeMode(QHeaderView::ResizeToContents);
-
     nflModel = new TeamListModel(nflList);
     expansionModel = new TeamListModel(expansionList);
     buttonState = false;
@@ -33,11 +24,28 @@ ListWindow::ListWindow(TeamList *nflList, TeamList *expansionList, QWidget *pare
     proxyNFLModel->setSourceModel(nflModel);
     proxyExpansionModel->setSourceModel(expansionModel);
 
+    tableView = new MultisortTableView();
+    ui->verticalLayout->addWidget(tableView);
+    tableView->setSortingEnabled(true);
+    tableView->setSelectionMode(QAbstractItemView::NoSelection);
+    tableView->setModifier(Qt::ShiftModifier);
+    tableView->setModel(proxyNFLModel);
+
     adapter = new HeaderSortingAdapter(tableView);
 
-    switchList = new QPushButton;
-    connect(switchList, &QPushButton::clicked, this, &ListWindow::switchListClicked);
-    ui->verticalLayout->addWidget(switchList);
+    tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    tableView->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    tableView->horizontalHeader()->setSectionResizeMode(2, QHeaderView::Stretch);
+    tableView->horizontalHeader()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+    tableView->horizontalHeader()->setSectionResizeMode(4, QHeaderView::ResizeToContents);
+    tableView->horizontalHeader()->setSectionResizeMode(5, QHeaderView::Stretch);
+    tableView->horizontalHeader()->setSectionResizeMode(6, QHeaderView::ResizeToContents);
+    tableView->horizontalHeader()->setSectionResizeMode(7, QHeaderView::Stretch);
+    tableView->horizontalHeader()->setSectionResizeMode(8, QHeaderView::Stretch);
+
+    switchListButton = new QPushButton;
+    connect(switchListButton, &QPushButton::clicked, this, &ListWindow::switchListButtonClicked);
+    ui->verticalLayout->addWidget(switchListButton);
 
     displayNFLList();
 }
@@ -47,7 +55,7 @@ ListWindow::~ListWindow()
     delete ui;
 }
 
-void ListWindow::switchListClicked()
+void ListWindow::switchListButtonClicked()
 {
     buttonState = !buttonState;
 
@@ -64,13 +72,13 @@ void ListWindow::switchListClicked()
 void ListWindow::displayNFLList()
 {
     this->setWindowTitle("NFL Teams List");
-    switchList->setText("Switch to Expansion Teams");
+    switchListButton->setText("Switch to Expansion Teams");
     tableView->setModel(proxyNFLModel);
 }
 
 void ListWindow::displayExpansionList()
 {
     this->setWindowTitle("Expansion Teams List");
-    switchList->setText("Switch to NFL Teams");
+    switchListButton->setText("Switch to NFL Teams");
     tableView->setModel(proxyExpansionModel);
 }

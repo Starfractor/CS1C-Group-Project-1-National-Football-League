@@ -22,7 +22,7 @@ public:
     explicit ListWindow(TeamList *nflList, TeamList *expansionList, QWidget *parent = nullptr);
     ~ListWindow();
 private slots:
-    void switchListClicked();
+    void switchListButtonClicked();
 private:
     Ui::ListWindow *ui;
     TeamListModel *nflModel;
@@ -31,7 +31,7 @@ private:
     SortFilterProxyModel *proxyExpansionModel;
     HeaderSortingAdapter *adapter;
     MultisortTableView *tableView;
-    QPushButton *switchList;
+    QPushButton *switchListButton;
 
     bool buttonState;
 
