@@ -45,12 +45,12 @@ QVariant TeamListModel::headerData(int section, Qt::Orientation orientation, int
     return QVariant();
 }
 
-int TeamListModel::rowCount(const QModelIndex &parent) const
+int TeamListModel::rowCount(const QModelIndex & /*parent*/) const
 {
     return list->getTeamList().length();
 }
 
-int TeamListModel::columnCount(const QModelIndex &parent) const
+int TeamListModel::columnCount(const QModelIndex & /*parent*/) const
 {
     return 9;
 }
