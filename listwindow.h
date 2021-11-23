@@ -6,7 +6,6 @@
 #include <QSortFilterProxyModel>
 #include "teamlist.h"
 #include "teamlistmodel.h"
-#include "headersortingadapter.h"
 #include "sortfilterproxymodel.h"
 #include "multisorttableview.h"
 
